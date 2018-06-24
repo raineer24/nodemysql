@@ -38,16 +38,16 @@ app.get('/createPostsTable', (req, res) => {
     });
 });
 
-//insert post 1 
-app.get('/addpost1', (req, res) => {
-    let post = { title: 'Post one', body: 'This is post number one'};
+//insert post 2
+app.get('/addpost2', (req, res) => {
+    let post = { title: 'Post two', body: 'This is post number two'};
     let sql = 'Insert INTO posts SET ?';
     let query = db.query(sql, post, (err, result) => {
         if (err) throw err;
         console.log(result);
-        res.send('Post 1 added....');
+        res.send('Post 2 added....');
     });
-})
+});
 
 app.listen('3000', () => {
     console.log('Server started on port 3000');
